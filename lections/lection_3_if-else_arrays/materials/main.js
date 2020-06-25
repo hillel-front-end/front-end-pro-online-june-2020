@@ -5,7 +5,7 @@ console.log('lection 2');
         xx-yy-zz - array intro
         xx-yy-zz - cycles + arrays
         xx-yy-zz - sum, find
-        xx-yy-zz - push, pop, splice, slice, "copy"
+        xx-yy-zz - push, pop, shift, unshift, splice, slice, "copy"
 
     Практика:
         - Задачи из раздела Лекция
@@ -66,7 +66,7 @@ for(i = 0; i < B.length; i++) {
 A = [];
 A.length = 20;
 
-console.log( Math.random() ); // 0 .. 1
+// console.log( Math.random() ); // 0 .. 1
 sum = 0;
 p = 1;
 for (i = 0; i < A.length; i++) {
@@ -77,9 +77,9 @@ for (i = 0; i < A.length; i++) {
     p *= A[i];
 }
 
-console.log(A);
-console.log(sum)
-console.log(p)
+// console.log(A);
+// console.log(sum)
+// console.log(p)
 
 
 /*
@@ -95,3 +95,37 @@ console.log(p)
     floor(random()*20) -> 16.7565 -> 8 -> 0-19  
     floor(random()*121)-50 -> -50 - 70
 */
+
+
+// ---------------------------------------------------
+
+// A = [1, 6, 7, 8, 3];
+// console.log(A);
+
+// // A[A.length] = 10;
+// res = A.push(152);
+
+// console.log(A, res);
+
+// res = A.pop();
+// console.log(A, res);
+
+
+// res = A.unshift(152);
+// console.log(A, res);
+
+// res = A.shift();
+// console.log(A, res);
+
+// ---------------
+
+// A = [1, 6, 7, 8, 3, 7, 3, 4, 56, 6];
+// res = A.slice(2, 6); // [7, 8, 3, 7]
+// res = A.slice(0); // [1, 6, 7, 8, 3, 7, 3, 4, 56, 6]
+// res = A.slice(0, -1); // [1, 6, 7, 8, 3, 7, 3, 4, 56]
+// res = A.slice(1); // [6, 7, 8, 3, 7, 3, 4, 56, 6]
+
+
+// res = A.splice(2, 3);
+// res = A.splice(2, 3, 888, 56,75,7,57,5,7,57,57,5,7,7,999);
+// console.log(A, res);
