@@ -1,0 +1,13 @@
+.block {
+    width: 190px;
+    height: 150px;
+
+    border: 8px solid black;
+
+    position: fixed;
+
+    top: 20px;
+    left: 378px;
+
+    transition: .2s;
+}
