@@ -25,28 +25,32 @@
             document.body.addEventListener('click', function(event){
                 event.stopPropagation();
                 console.log('Обработчик BODY');
-            }, true);
+            }, {capture: false});
 
             e1.addEventListener("click",
                 function (event) {
                     this.style.backgroundColor = "green";
                     console.log("Обработчик DIV 1");
-                },
-            true);
+                }, false);
 
             e2.addEventListener("click",
                 function (event) {
+                    // event.stopPropagation();
+                    event.stopImmediatePropagation();
                     this.style.backgroundColor = "yellow";
                     console.log("Обработчик DIV 2");
-                },
-                isTunnel);
+                }, true);
+
+            e2.addEventListener("click",
+                function (event) {
+                    console.log("Обработчик DIV 2.2.2.2");
+                }, true);
 
             e3.addEventListener("click",
                 function (event) {
                     this.style.backgroundColor = "red";
                     console.log("Обработчик DIV 3");
-                },
-            isTunnel);
+                });
         }
 
     </script>
