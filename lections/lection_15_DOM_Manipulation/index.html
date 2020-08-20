@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <style>
+        .block {
+            border: 2px solid black;
+        }
+
+        .menu-container {
+            display: flex;
+            width: 100%;
+        }
+        .menu-item {
+            margin-right: 15px;
+            cursor: pointer;
+            transition: box-shadow .1s;
+            position: relative;
+        }
+
+        .menu-item:hover {
+            box-shadow: 3px 2px 10px grey;
+        }
+
+        .menu-item > .menu-item-wrap {
+            visibility: hidden;
+            opacity: 0;
+            transition: .3s;
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+
+        .menu-item:hover > .menu-item-wrap {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="block" title="test" data-savelii="foobar">
+        <span>!</span>Block
+    </div>
+    <div class="users-container"></div>
+    <hr>
+    <div class="menu-container"></div>
+    <script src="./events.js"></script>
+</body>
+</html>
