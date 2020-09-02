@@ -86,16 +86,20 @@ Person.prototype.getFullName = function(){
     return this.name + ' ' + this.surname;
 }
 
-let child = new Person('Vasya', 'Petrov');
-let child2 = new Person('Petya', 'Vasyn', 23);
-let child3 = new Person('Name', 'Surname', 99);
-let child4 = Person('Name4', 'Surname4', 99);
+Person.getLimit = function() {
+    
+}
+
+// let child = new Person('Vasya', 'Petrov');
+// let child2 = new Person('Petya', 'Vasyn', 23);
+// let child3 = new Person('Name', 'Surname', 99);
+// let child4 = Person('Name4', 'Surname4', 99);
 
 // console.log( child.getFullName() );
 // console.log( child2.getFullName() );
 // console.log( child3.getFullName() );
 
-console.log(child, child2, child3, child4);
+// console.log(child, child2, child3, child4);
 
 /*
     1. создает пустой объект {}

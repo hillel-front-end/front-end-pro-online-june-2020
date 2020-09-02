@@ -186,19 +186,19 @@ function getMenuItem(menuItem) {
 
 
 // ---------------------------------
-// function getMenuItemForES6(menuItem) {
-//     return `<div class="menu-item">${menuItem.title}</div>`;
-// }
+function getMenuItemForES6(menuItem) {
+    return `<div class="menu-item">${menuItem.title}</div>`;
+}
 
-// let menuStr = `
-//     <div class="menu-container">
-//         ${menu.map(menuItem => `
-//             <div class="menu-item">
-//                 ${menuItem.title}
-//                 ${menuItem.submenu ? `<div class="menu-item-wrap">${menuItem.submenu.map(val => getMenuItemForES6(val)).join('')}</div>` : ``}
-//             </div>
-//         `).join('')}
-//     </div>
-// `;
+let menuStr = `
+    <div class="menu-container">
+        ${menu.map(menuItem => `
+            <div class="menu-item">
+                ${menuItem.title}
+                ${menuItem.submenu ? `<div class="menu-item-wrap">${menuItem.submenu.map(val => getMenuItemForES6(val)).join('')}</div>` : ``}
+            </div>
+        `).join('')}
+    </div>
+`;
 
-// document.body.innerHTML += menuStr;
+document.body.innerHTML += menuStr;
