@@ -207,17 +207,14 @@ class Character extends  Physics {
         this.selector = selector;
         this.x = startX;
         this.y = startY;
-
-        this.#init();
     }
 
     el = null;
 
-    #init() {
+    init() {
         this.el = document.querySelector(this.selector);
 
         this.render();
-        this.addEventListeners();
     }
 
     render(){
@@ -229,6 +226,23 @@ class Character extends  Physics {
         document.appendChild(this.el);
     }
 
+    move() {}
+    jump(){}
+    sit() {}
+}
+
+class Player extends Character {
+    constructor(config) {
+        super(config);
+
+        this.init();
+    }
+
+    init() {
+        super.init();
+        this.addEventListeners();
+    }
+
     addEventListeners() {
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Space') {
@@ -237,25 +251,27 @@ class Character extends  Physics {
             //...
         });
     }
+}
 
-    move() {}
-    jump(){}
-    sit() {}
+class Enemy extends Character {
+    constructor(config) {
+        super(config);
 
-
+        this.init();
+    }
 }
 
 class Physics {
 
 }
 
-const char1 = new Character({
+const char1 = new Player({
     selector: '.block',
     startX: 1000,
     startY: 500
 })
 
-const char2 = new Character({
+const char2 = new Enemy({
     selector: '.enemy',
     startX: 0,
     startY: 500
