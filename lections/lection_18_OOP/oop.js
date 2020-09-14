@@ -183,37 +183,76 @@ let {
 
 
 class Customers {
+    #priorityTarget = null;
+
     constructor(list, target) {
         this.source = list;
         this.target = target;
     }
 
     render(target) {
-        if ((!target && !this.target) || !this.source) {
+        if ((!target && !this.target && !this.#priorityTarget) || !this.source) {
             return console.warn('no target or source')
         }
-        this.#priorityTarget = target || this.target;
-        this.#setTargetEvent(this.#priorityTarget);
-        
+        if (!this.#priorityTarget) {
+            this.#priorityTarget = target || this.target;
+            this.#setTargetEvent(this.#priorityTarget);
+        }
+
         this.#priorityTarget.innerHTML += `${this.source.map((item, pos) => `<td data-pos="${pos}">${item}</td>`).join('')}`;
     }
 
+    remove(index) {
+        if(index === undefined) {
+            return;
+        }
+        this.source.splice(index, 1);
+        this.#applyChanges();
+    }
 
-    #priorityTarget = null;
+    push(value) {
+        if(!value) {
+            return;
+        }
+        this.source.push(`Name ${value}`);
+        this.#applyChanges();
+    }
+
+    #applyChanges() {
+        this.#priorityTarget.innerHTML = '';
+        this.render();
+    }
 
     // private
     #setTargetEvent(target) { 
         target.addEventListener('click', event => {
+            this.#recalculatePositions(event.target);
             event.target.remove();
 
             const index = parseInt(event.target.dataset.pos);
             this.source.splice(index, 1);
         })
     }
+
+    #recalculatePositions(removedElement) {
+        const childs = removedElement.parentElement.children;
+        for(let index = Number(removedElement.dataset.pos) + 1; index < childs.length; index++) {
+            childs[index].dataset.pos--; 
+        }
+    }
 }
 
-let list = new Customers(['Name 1', 'Name 2', 'Name 3', 'Name 4', 'Name 5']);
+let list = new Customers(['Name 1', 'Name 2', 'Name 3', 'Name 4', 'Name 5', 'Name 6', 'Name 7']);
+
 
 window.addEventListener('load', () => {
     list.render(document.querySelector('#table-row'));
+
+    document.querySelector('#removeRandom').addEventListener('click', () => {
+        list.remove(Math.floor(Math.random()*list.source.length));
+    })
+
+    document.querySelector('#pushRandom').addEventListener('click', () => {
+        list.push(Math.floor(Math.random()*100));
+    })
 })

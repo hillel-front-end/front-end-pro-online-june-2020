@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+.block {
+    border: 4px solid black;
+    padding: 20px 40px;
+}
+
+
+.hidden {
+    display: none;
+}
+
+ul {
+    list-style-type: circle;
+}
