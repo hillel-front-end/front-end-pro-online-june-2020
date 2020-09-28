@@ -1,0 +1,20 @@
+{
+    "GET": {
+        "status": "Ok",
+        "body": {
+            "message": "get response"
+        }
+    },
+    "POST": {
+        "status": "Ok",
+        "body": {
+            "message": "post response"
+        }
+    },
+    "PUT": {
+        "status": "Ok",
+        "body": {
+            "message": "put response"
+        }
+    }
+}
