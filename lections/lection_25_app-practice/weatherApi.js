@@ -1,7 +1,7 @@
 
 const fetch = require('node-fetch');
 
-// OpenWeatherAPI - https://openweathermap.org/guide
+// OpenWeatherAPI - 
 const API_KEY = 'MY API'; // NON SECURE
 const WEATHER_PATH_BASE = 'https://api.openweathermap.org/data/2.5';
 
