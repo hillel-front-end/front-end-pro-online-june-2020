@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First server</title>
+    <style>
+        .checkbox-container {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>  
+</head>
+<body>
+    <div>
+        <input id="city" type="text" value="Kyiv"> <label for="city">Write city name</label>
+    </div>
+    <div class="checkbox-container">
+        <div><input class="query-filter" id="temp" value="temp" type="checkbox"><label for="temp">temp</label></div>
+        <div><input class="query-filter" id="feels_like" value="feels_like" type="checkbox"><label for="feels_like">feels_like</label></div>
+        <div><input class="query-filter" id="temp_min" value="temp_min" type="checkbox"><label for="temp_min">temp_min</label></div>
+        <div><input class="query-filter" id="humidity" value="humidity" type="checkbox"><label for="humidity">humidity</label></div>
+    </div>
+    <div>
+        <button id="getForecastData">Get forecast for city</button>
+    </div>
+    <div>
+        <div class="container-table">
+            <table id="table-data-weather" border="1"></table>
+        </div>
+    </div>
+
+
+    <script src="main.js" type="module"></script>
+</body>
+</html>
