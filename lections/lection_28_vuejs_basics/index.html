@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="app">
+        Hello {{ message }}
+        <hr>
+        {{ (value + 100) * point }}
+        <hr>
+        {{ someValue }}
+        <hr>
+        {{ info }}
+    </div> -->
+
+  <!-- <hr />
+    <div id="app-2">
+        {{ className }}   
+        <hr>
+        <span v-bind:class="className">
+            span inner text
+        </span>
+        <hr>
+        <span :class="className">
+            span inner text
+        </span>
+        <hr>
+        <div :class="listOfClasses"></div>
+        <div :title="'Hover text' + counter" :class="divClassOpt">Div</div>
+    </div>
+
+    <hr /> -->
+
+    <!-- <div id="app-3">
+        <span v-if="seen">Сейчас меня видно {{info}}</span>
+    </div> -->
+ 
+    <hr />
+
+    <div id="app-4">
+        <!-- <ol>
+            <li v-for="(value, key) in list" v-if="value.text">
+                {{ value.text }}
+            </li>
+        </ol> -->
+
+        <!-- <ol>
+            <li v-for="(value, key) in getMetList()" >
+                {{ value }}
+            </li>
+        </ol>
+        {{ getMetList() }}
+
+        <hr>
+
+        <ol>
+            <li v-for="(value, key) in getMetListComputed" >
+                {{ value }}
+            </li>
+        </ol>
+        {{ getMetListComputed }} -->
+    </div>
+    <style>
+        .table-row:hover {
+            background-color: gainsboro;
+            cursor: pointer;
+        }
+    </style>
+    <hr>
+    <div id="app-5">
+        {{ title }}
+        <span v-html="title"></span>
+        <hr>
+        <p :class="paragraph">{{ text }}</p>
+        <hr>
+        <!-- <div @click="onContainerClick">
+            <button 
+                v-on:click.stop.once="onButtonClick"
+                @mouseover="onMouseover"
+                @mouseout="onMouseOut"
+                @contextmenu.prevent="onContextMenu($event, 100, 500)"
+            >Click</button>
+
+        </div> -->
+        <hr>
+        <!-- <input type="number" @input="onInput" :value="limit">  -->
+            
+        <!-- <input type="number" @input="limit = $event.target.value" :value="limit">  -->
+        <input type="range" max="30" @input="onInput" v-model="limit" :disabled="isDisabledRange"> 
+        <input type="number" max="30" @input="onInput" v-model="limit" :disabled="isDisabledRange"> 
+        Limit: {{ limit }}
+        <br>
+        <input type="checkbox" id="check" v-model="isDisabledRange">
+        <label for="check">Disable range</label>
+        <table border="1">
+            <tr 
+                v-for="(item, key) in list"
+                class="table-row"
+                @click="onRemove(key)"
+            >
+                <td>#{{ key }}</td>
+                <td>{{ item }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <hr>
+
+
+    <!-- <style>
+        .content {
+            display: flex;
+        }
+        .content table {
+            border: 2px solid black;
+            width: 100%;
+            min-height: 200px;
+        }
+
+        .content td {
+            height: 20px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .table-wrapper {
+            max-height: 200px;
+            overflow-y: auto;
+            width: 50%;
+        }
+    </style>
+
+    <div class="app7-practice">
+        {{ title }}
+        <div class=content>
+            <div class="table-wrapper">
+                <table id="left">
+                    <tr v-for="passenger in leftTable">
+                        <td>
+                            {{ passenger }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="table-wrapper">
+                <table id="right">
+                    <tr v-for="passenger in rightTable">
+                        <td>
+                            {{ passenger }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <hr>
+        <button @click="onStopAdding">
+            {{ enabledEmulating ? 'Stop' : 'Proceed' }} Adding Passengers
+        </button>
+        Status: {{ enabledEmulating }}
+        <hr>
+        <span v-for="person in queue">
+            {{ person }}
+        </span>
+    </div> -->
+    <script src="./main.js"></script>
+    <!-- <script src="./practice.js"></script> -->
+</body>
+</html>

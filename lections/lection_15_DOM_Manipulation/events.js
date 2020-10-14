@@ -58,6 +58,9 @@ let target = document.querySelector('.users-container');
 
 let ul = document.createElement('ul');
 for(let i = 0; i < users.length; i++) {
+    if(users[i]) {
+        continue;
+    }
     let li = document.createElement('li');
     li.innerHTML = `<span class="special">` + users[i] + `</span>`;
     
