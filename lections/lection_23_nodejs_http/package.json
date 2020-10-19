@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "eslint-plugin-vue": "^7.1.0",
     "node-static": "0.7.11"
   }
 }
