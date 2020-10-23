@@ -6,12 +6,14 @@
        <!-- <input type="text" v-model="name"> -->
        <!-- <input type="text" :value="name" @input="name=$event.target.value">
        <hr> -->
-<!-- 
+<!--
        <ButtonCustom :val="value" @change-value="onChange" v-model="name" />
        <hr> -->
     <router-link to="/">Go to Home</router-link>
     <br>
     <router-link to="/my-career/178299432">Go to Career 178299432</router-link>
+    <hr>
+    <router-link to="/slots">Slots</router-link>
     <hr>
     <router-view></router-view>
   </div>
