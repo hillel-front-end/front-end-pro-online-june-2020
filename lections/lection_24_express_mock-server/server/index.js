@@ -50,7 +50,8 @@ app.get('/', (req, res) => {
 //     })
 
 app.get('/microwave/config', (req, res) => {
-    
+
+    req.query.params // { age: 10, name: 'Vasya' }
     const body = {
         filters: [
             'width',
@@ -62,29 +63,29 @@ app.get('/microwave/config', (req, res) => {
 });
 
 
-// app.route('/cart')
-//     .get((req, res, next) => {
-//         console.log('GET GET GET');
-//         next();
-//     })
-//     .all((req, res) => {
-//         fs.readFile(CART_PATH, 'utf8', (error, data) => {
-//             const parsed = JSON.parse(data);
-//             res.json(parsed[req.method]);
-//         })
-//     })
-    // .get((req, res) => {
+app.route('/cart')
+    .get((req, res, next) => {
+        console.log('GET GET GET');
+        next();
+    })
+    .all((req, res) => {
+        fs.readFile(CART_PATH, 'utf8', (error, data) => {
+            const parsed = JSON.parse(data);
+            res.json(parsed[req.method]);
+        })
+    })
+    .get((req, res) => {
 
-    //     fs.readFile(CART_PATH, 'utf8', (error, data) => {
-    //         const parsed = JSON.parse(data);
-    //         res.json(parsed[req.method]);
-    //     })
+        fs.readFile(CART_PATH, 'utf8', (error, data) => {
+            const parsed = JSON.parse(data);
+            res.json(parsed[req.method]);
+        })
 
-    //     // res.send(`GET - response`) 
-    // })
-    // .post((req, res) => {
-    //     res.send(`POST - response`) 
-    // });
+        // res.send(`GET - response`) 
+    })
+    .post((req, res) => {
+        res.send(`POST - response`) 
+    });
 
 
 // ----------------------------------------------------------------
